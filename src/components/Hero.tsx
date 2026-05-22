@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Heading, Text } from "./core/Typography";
 
 const HEADLINE = ["I DESIGN", "VISUAL IDENTITIES", "THAT SELL."];
 
@@ -41,7 +42,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-ink text-cream overflow-hidden grain pt-32 md:pt-36 pb-16">
+    <section className="relative min-h-screen bg-black text-light overflow-hidden grain pt-32 md:pt-36 pb-16">
       {/* Glow */}
       <div
         aria-hidden
@@ -55,7 +56,7 @@ export function Hero() {
       />
 
       {/* Top meta strip */}
-      <div className="relative mx-auto max-w-400 px-6 md:px-10 flex justify-between items-center text-cream/50 text-xs eyebrow">
+      <div className="relative mx-auto max-w-400 px-6 md:px-10 flex justify-between items-center text-light/50 text-xs eyebrow">
         <span className="flex items-center gap-2">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-yellow animate-pulse" />
           Available for Q3
@@ -89,19 +90,19 @@ export function Hero() {
         {/* Subtitle + CTAs */}
         <div className="mt-12 md:mt-16 grid grid-cols-12 gap-6 items-end">
           <div className="col-span-12 md:col-span-6">
-            <p className="eyebrow text-cream/50 mb-3">— Profile</p>
-            <p className="font-display text-xl md:text-2xl text-cream/90">
+            <p className="eyebrow text-light/50 mb-3">— Profile</p>
+            <Text className="font-display text-light/90">
               Brand Designer <span className="text-yellow">•</span> Graphic Designer{" "}
               <span className="text-yellow">•</span> Visual Storyteller
-            </p>
+            </Text>
           </div>
 
           <div className="col-span-12 md:col-span-6 flex flex-wrap gap-4 md:justify-end">
             <Link
               to="/work"
-              className="group relative inline-flex items-center gap-3 bg-yellow text-ink px-7 py-4 font-medium overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_-5px_var(--yellow)]"
+              className="group relative inline-flex items-center gap-3 bg-yellow text-black px-7 py-4 font-medium overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_-5px_var(--yellow)]"
             >
-              <span className="absolute inset-0 bg-cream translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+              <span className="absolute inset-0 bg-light translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               <span className="relative">Explore Work</span>
               <span aria-hidden className="relative transition-transform group-hover:translate-x-1">
                 →
@@ -109,7 +110,7 @@ export function Hero() {
             </Link>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 border border-cream/30 text-cream px-7 py-4 font-medium hover:border-yellow hover:text-yellow hover:shadow-[0_0_30px_-10px_var(--yellow)] transition-all duration-300"
+              className="group inline-flex items-center gap-3 border border-light/30 text-light px-7 py-4 font-medium hover:border-yellow hover:text-yellow hover:shadow-[0_0_30px_-10px_var(--yellow)] transition-all duration-300"
             >
               <span>Contact Me</span>
               <span aria-hidden className="transition-transform group-hover:rotate-45">↗</span>
@@ -118,16 +119,16 @@ export function Hero() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-px bg-cream/10 border-y border-cream/10">
+        <div className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-px bg-light/10 border-y border-light/10">
           {[
             { k: "5+", v: "Years designing" },
             { k: "40+", v: "Brands shipped" },
             { k: "300+", v: "Thumbnails" },
             { k: "12", v: "Industries" },
           ].map((s) => (
-            <div key={s.v} className="bg-ink p-5 md:p-7 hover:bg-yellow hover:text-ink transition-colors duration-500 group">
-              <p className="font-display text-3xl md:text-5xl">{s.k}</p>
-              <p className="text-xs md:text-sm text-cream/50 group-hover:text-ink/70 mt-2">{s.v}</p>
+            <div key={s.v} className="bg-black p-5 md:p-7 hover:bg-yellow hover:text-black transition-colors duration-500 group">
+              <Heading as="p">{s.k}</Heading>
+              <Text className="text-light/50 group-hover:text-black/70 mt-2">{s.v}</Text>
             </div>
           ))}
         </div>

@@ -1,6 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { X, ArrowDown, ChevronRight } from "lucide-react";
+import { X, ArrowDown } from "lucide-react";
+import { Heading } from "./core/Typography";
+import { useT } from "../i18n/LanguageContext";
+
+// Images
+import cc1 from "@/assets/images/charte/Continium Capital/continium-capital.webp";
+import yt_friperie from "@/assets/images/MiniatureYoutube/_3 JOURS pour GÉRER une FRIPERIE.webp";
+import bodygoal from "@/assets/images/charte/bodygoal/presentation-logo/charte graphique BODYGOAL copie_page-0025.webp";
+import messi from "@/assets/images/MiniatureYoutube/Messi VS Maradonna__.webp";
+import scaj from "@/assets/images/event/scaj/bloc-notes1.webp";
 
 interface ProjectSectionProps {
   project: (typeof PROJECTS)[0];
@@ -9,77 +18,76 @@ interface ProjectSectionProps {
   onClose: () => void;
 }
 
-// Données des projets basées sur tes thématiques
+// Données des projets
 const PROJECTS = [
   {
     id: "p1",
-    title: "METRO-V",
-    category: "Urbanisme • Transport",
-    description: "Optimisation des flux de mobilité douce en milieu urbain dense.",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2000",
+    title: "Continium Capital",
+    category: "Identité de marque • Finance",
+    description: "Minimalisme architectural pour la finance moderne.",
+    image: cc1,
     details: {
-      case: "Analyse des flux de passagers sur 24 mois pour réduire les temps d'attente de 15% via une interface prédictive.",
-      goals:
-        "Centraliser les données du MCVT pour offrir une vision temps réel de la saturation du réseau.",
-      results: "+250k Utilisateurs actifs",
-      entity: "Ministère du Cadre de Vie et des Transports (MCVT)",
+      case: "Création d'une identité visuelle complète pour une société d'investissement moderne.",
+      goals: "Refléter la stabilité, la confiance et l'innovation dans le secteur financier.",
+      results: "Identité complète",
+      entity: "Continium Capital",
     },
   },
   {
     id: "p2",
-    title: "KINETIC",
-    category: "Énergie • Dashboard",
-    description: "Visualisation interactive de la consommation énergétique nationale.",
-    image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2000",
+    title: "3 Jours pour Gérer une Friperie",
+    category: "YouTube • Miniature",
+    description: "Design de miniature à fort taux de clics.",
+    image: yt_friperie,
     details: {
-      case: "Création d'un dashboard de pilotage pour le Ministère de l'Énergie permettant de suivre l'adoption des énergies renouvelables.",
-      goals: "Intégration de capteurs IoT et rendu 3D des grilles de distribution.",
-      results: "98% de précision",
-      entity: "Ministère de l'Énergie",
+      case: "Création d'une miniature accrocheuse pour maximiser le taux de clics.",
+      goals: "Attirer l'attention et communiquer le message en une fraction de seconde.",
+      results: "+15% CTR",
+      entity: "Créateur YouTube",
     },
   },
   {
     id: "p3",
-    title: "AGRI-TECH",
-    category: "Agriculture • Innovation",
-    description: "Monitorage intelligent des rendements agricoles par satellite.",
-    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2000",
+    title: "BodyGoal",
+    category: "Identité de marque • Wellness",
+    description: "Marque wellness avec une confiance discrète.",
+    image: bodygoal,
     details: {
-      case: "Soutenir la souveraineté alimentaire en fournissant aux agriculteurs des données météo précises.",
-      goals: "Développé avec le Ministère de l'Agriculture pour la gestion des intrants.",
-      results: "12 Régions couvertes",
-      entity: "Ministère de l'Agriculture",
+      case: "Création d'une identité visuelle complète pour une marque de bien-être.",
+      goals: "Refléter l'énergie, la santé et la confiance.",
+      results: "Identité complète",
+      entity: "BodyGoal",
     },
   },
   {
     id: "p4",
-    title: "ECO-TRACK",
-    category: "Économie • Gouvernance",
-    description: "Plateforme de transparence budgétaire et de suivi des investissements.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000",
+    title: "Messi VS Maradona",
+    category: "YouTube • Miniature",
+    description: "Miniature à fort taux de clics pour contenu football.",
+    image: messi,
     details: {
-      case: "Permettre aux citoyens de suivre l'allocation des budgets publics et l'avancement des chantiers.",
-      goals: "Projet piloté par le Ministère des Finances pour renforcer la confiance.",
-      results: "Audit Open Data",
-      entity: "Ministère des Finances",
+      case: "Miniature captivante pour un débat légendaire.",
+      goals: "Maximiser le taux de clics avec un visuel impactant.",
+      results: "+20% CTR",
+      entity: "Créateur YouTube",
     },
   },
   {
     id: "p5",
-    title: "HEAL-OS",
-    category: "Santé • Analyse",
-    description: "Cartographie prédictive des besoins sanitaires régionaux.",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2000",
+    title: "SCAJ",
+    category: "Design événementiel • Print",
+    description: "Bloc-notes pour événement professionnel.",
+    image: scaj,
     details: {
-      case: "Répartir les ressources médicales de manière équitable sur le territoire.",
-      goals: "Interface cartographique couplée à une IA pour identifier les zones de tension.",
-      results: "Planification Stratégique",
-      entity: "Ministère de la Santé",
+      case: "Design de supports print pour un événement.",
+      goals: "Créer une cohérence visuelle sur tous les supports.",
+      results: "Branding complet",
+      entity: "SCAJ",
     },
   },
 ];
 
-const ProjectSection = ({ project, isOpen, onOpen }: ProjectSectionProps) => {
+const ProjectSection = ({ project, isOpen, onOpen, t }: ProjectSectionProps & { t: (key: any) => string }) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -94,7 +102,7 @@ const ProjectSection = ({ project, isOpen, onOpen }: ProjectSectionProps) => {
   return (
     <section
       ref={containerRef}
-      className={`relative h-screen w-full flex items-center justify-center overflow-hidden sticky top-0 transition-all duration-700 ${
+      className={`relative h-screen w-full flex items-center justify-center overflow-hidden stic ky top-0 transition-all duration-700 ${
         isOpen ? "z-100" : "z-10"
       }`}
       onClick={() => !isOpen && onOpen(project)}
@@ -108,7 +116,7 @@ const ProjectSection = ({ project, isOpen, onOpen }: ProjectSectionProps) => {
             isOpen ? "brightness-[0.2]" : "brightness-[0.4]"
           }`}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/60" />
       </motion.div>
 
       {/* Main Content */}
@@ -138,19 +146,19 @@ const ProjectSection = ({ project, isOpen, onOpen }: ProjectSectionProps) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left max-w-7xl mx-auto">
               <div>
                 <h3 className="text-[10px] uppercase tracking-widest text-white/40 mb-4 font-bold">
-                  Étude de Cas
+                  {t("work.case")}
                 </h3>
                 <p className="text-sm text-white/80 leading-relaxed">{project.details.case}</p>
               </div>
               <div>
                 <h3 className="text-[10px] uppercase tracking-widest text-white/40 mb-4 font-bold">
-                  Objectifs
+                  {t("work.goals")}
                 </h3>
                 <p className="text-sm text-white/80 leading-relaxed">{project.details.goals}</p>
               </div>
               <div>
                 <h3 className="text-[10px] uppercase tracking-widest text-white/40 mb-4 font-bold">
-                  Résultats
+                  {t("work.results")}
                 </h3>
                 <p className="text-2xl font-serif italic text-white mb-1">
                   {project.details.results}
@@ -166,6 +174,7 @@ const ProjectSection = ({ project, isOpen, onOpen }: ProjectSectionProps) => {
 };
 
 export default function WorkSelection() {
+  const { t } = useT();
   const [selectedProject, setSelectedProject] = useState<(typeof PROJECTS)[0] | null>(null);
 
   // Verrouiller le scroll quand un projet est ouvert
@@ -178,17 +187,7 @@ export default function WorkSelection() {
   }, [selectedProject]);
 
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white selection:bg-white selection:text-black">
-      {/* Navigation */}
-      {/* <nav className="fixed top-0 w-full p-8 flex justify-between items-center z-[1000] mix-blend-difference">
-        <div className="text-xl font-bold tracking-tighter">STUDIO.SELECT</div>
-        <div className="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
-          <span className="cursor-pointer hover:opacity-50 transition-opacity">Work</span>
-          <span className="cursor-pointer hover:opacity-50 transition-opacity">About</span>
-          <span className="cursor-pointer hover:opacity-50 transition-opacity">Contact</span>
-        </div>
-      </nav> */}
-
+    <section id="projets" className="bg-surface min-h-screen text-white selection:bg-white selection:text-black">
       {/* Bouton Fermer */}
       <AnimatePresence>
         {selectedProject && (
@@ -199,35 +198,29 @@ export default function WorkSelection() {
             onClick={() => setSelectedProject(null)}
             className="fixed top-8 right-8 z-2000 bg-white text-black px-6 py-3 rounded-full flex items-center gap-2 text-xs font-bold uppercase tracking-widest shadow-2xl transition-transform hover:scale-105 active:scale-95"
           >
-            <X size={14} /> Retour à la galerie
+            <X size={14} /> {t("work.back")}
           </motion.button>
         )}
       </AnimatePresence>
 
       {/* Intro Section */}
-      <section className="h-screen flex flex-col justify-center px-10 md:px-32 relative z-50">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-xs uppercase tracking-[0.4em] mb-6 opacity-60"
-        >
-          Curated Showcase — 2024
-        </motion.span>
-        <motion.h1
+      <section className="h-screen flex flex-col justify-center px-8 md:px-16 xl:px-43 2xl:px-56 relative z-50">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-7xl md:text-[10vw] font-bold leading-[0.85] tracking-tighter font-serif italic"
         >
-          Selected <br /> Work
-        </motion.h1>
+          <Heading as="h1" className="font-bold">
+            {t("work.title")} <br /> {t("work.title.em")}
+          </Heading>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
           transition={{ delay: 0.5 }}
           className="mt-16 flex items-center gap-4 text-xs uppercase tracking-widest"
         >
-          <span>Scroll pour explorer</span>
+          <span>{t("work.scroll")}</span>
           <ArrowDown size={14} className="animate-bounce" />
         </motion.div>
       </section>
@@ -241,12 +234,34 @@ export default function WorkSelection() {
             isOpen={selectedProject?.id === project.id}
             onOpen={setSelectedProject}
             onClose={() => setSelectedProject(null)}
+            t={t}
           />
         ))}
       </main>
 
+      {/* CTA Section */}
+      {/* <section className="h-s creen flex flex-col items-center justify-center relative z-60">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <Heading as="h2" className="font-bold text-white mb-8">
+            Voir tous les <span className="text-yellow">projets.</span>
+          </Heading>
+          <Link
+            to="/work"
+            className="group inline-flex items-center gap-3 bg-yellow text-black px-8 py-4 font-bold uppercase tracking-wider transition-all hover:bg-white"
+          >
+            Tous les projets
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
+      </section> */}
+
       {/* Footer Section */}
-      <footer className="h-screen flex flex-col items-center justify-center bg-white text-black text-center p-10 relative z-60">
+      {/* <footer className="h-screen flex flex-col items-center justify-center bg-white text-black text-center p-10 relative z-60">
         <motion.h2
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 50, opacity: 0 }}
@@ -264,7 +279,7 @@ export default function WorkSelection() {
         <div className="absolute bottom-10 text-[10px] uppercase tracking-widest text-black/30 font-bold">
           © 2024 Studio Select — Digital Governance Specialists
         </div>
-      </footer>
-    </div>
+      </footer> */}
+    </section>
   );
 }

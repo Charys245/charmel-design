@@ -13,7 +13,7 @@ const LanguageContext = createContext<Ctx | null>(null);
 const STORAGE_KEY = "site.lang";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>("fr");
 
   // Hydrate from localStorage on client
   useEffect(() => {
@@ -43,7 +43,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [lang, setLang]);
 
   const t = useCallback(
-    (key: TranslationKey) => dictionaries[lang][key] ?? dictionaries.en[key] ?? key,
+    (key: TranslationKey) => {
+      const dict = dictionaries[lang] as Record<string, string>;
+      const fallback = dictionaries.en as Record<string, string>;
+      return dict[key] ?? fallback[key] ?? key;
+    },
     [lang],
   );
 

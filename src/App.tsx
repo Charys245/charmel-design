@@ -1,16 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "./components/core/ErrorBoundary";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SiteFooter } from "./components/SiteFooter";
 import ScrollToTop from "./components/core/ScrollToTop";
-// import { SiteHeader } from "./components/SiteHeader";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
-import Contact from "./pages/Contact";
-import Studio from "./pages/Studio";
-import Services from "./pages/Services";
-import Lab from "./pages/Lab";
+import { LanguageProvider } from "./i18n/LanguageContext";
+import { SiteHeader } from "./components/SiteHeader";
 
 // export const Route = createRootRoute({
 //   head: () => ({
@@ -51,7 +49,7 @@ const AppContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-background min-h-screen text-foreground selection:bg-primary selection:text-primary-foreground">
+    <div className="bg-background min-h-screen text-foreground selection:bg-yellow selection:text-black">
       <AnimatePresence mode="wait">
         {isLoading ? (
           <motion.div
@@ -78,30 +76,15 @@ const AppContent: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            {/* <SiteHeader /> */}
+            <SiteHeader />
 
             <main>
               <ScrollToTop />
-              <Suspense
-                fallback={
-                  <div className="min-h-screen flex flex-col items-center justify-center bg-black gap-8">
-                    {/* <div className="text-primary font-bold text-6xl tracking-tight font-['Bricolage_Grotesque']">
-                    Charmel Tobou
-                  </div> */}
-                    <div className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-                  </div>
-                }
-              >
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/work" element={<Work />} />
-                  <Route path="/studio" element={<Studio />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/lab" element={<Lab />} />
-                  <Route path="/contact" element={<Contact />} />
-                  {/* <Route path="/about" element={<AboutPage />} /> */}
-                </Routes>
-              </Suspense>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
             </main>
             <SiteFooter />
           </motion.div>
@@ -114,11 +97,13 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <ErrorBoundary>
-      {/* <LanguageProvider> */}
-      <Router>
-        <AppContent />
-      </Router>
-      {/* </LanguageProvider> */}
+      <HelmetProvider>
+        <LanguageProvider>
+          <Router>
+            <AppContent />
+          </Router>
+        </LanguageProvider>
+      </HelmetProvider>
     </ErrorBoundary>
   );
 };

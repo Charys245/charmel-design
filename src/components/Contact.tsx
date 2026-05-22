@@ -5,7 +5,7 @@ const Contact = () => {
   const WHATSAPP_URL = "https://wa.me/22901660118";
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center font-sans selection:bg-yellow-400 selection:text-black">
+    <div className=" bg-black text-white flex items-center justify-center font-sans selection:bg-yellow-400 selection:text-black">
       
       <motion.section 
         initial={{ opacity: 0, y: 15 }}

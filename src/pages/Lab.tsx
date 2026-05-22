@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../components/SiteHeader";
 import { Link } from "react-router-dom";
 import { SelectedWorks } from "../components/SelectedWorks";
-import { SiteFooter } from "../components/SiteFooter";
+import { Heading, Text } from "../components/core/Typography";
 
 // export const Route = createFileRoute("/lab")({
 //   head: () => ({
@@ -43,7 +43,7 @@ function Lab() {
   const py = (mouse.y - 0.5) * 2;
 
   return (
-    <div className="min-h-screen bg-ink text-cream">
+    <div className="min-h-screen bg-black text-light">
       <SiteHeader forceDark />
 
       <section
@@ -103,7 +103,7 @@ function Lab() {
             }deg)`,
           }}
         >
-          <div className="w-full h-full border border-cream/20 backdrop-blur-md bg-cream/5 rotate-12" />
+          <div className="w-full h-full border border-light/20 backdrop-blur-md bg-light/5 rotate-12" />
         </div>
 
         <div
@@ -117,13 +117,14 @@ function Lab() {
         {/* CONTENT */}
         <div className="relative mx-auto max-w-400 px-6 md:px-10 w-full grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 md:col-span-9">
-            <p className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-cream/50 mb-10 reveal">
+            <p className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-light/50 mb-10 reveal">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-yellow shadow-[0_0_12px_var(--yellow)] animate-pulse" />
               Lab · Digital Edition · 2025
             </p>
 
-            <h1
-              className="font-display font-medium leading-[0.9] tracking-[-0.04em] text-[clamp(2.75rem,9vw,9.5rem)] reveal"
+            <Heading
+              as="h1"
+              className="font-bold reveal"
               style={{
                 animationDelay: "0.1s",
                 transform: `translate(${px * 6}px, ${py * 4}px)`,
@@ -143,15 +144,15 @@ function Lab() {
                 </span>
               </span>{" "}
               world.
-            </h1>
+            </Heading>
 
-            <p
-              className="mt-10 text-cream/70 text-lg md:text-xl font-light tracking-wide reveal"
+            <Text
+              className="mt-10 text-light/70 font-light tracking-wide reveal"
               style={{ animationDelay: "0.3s" }}
             >
               Graphic Designer <span className="text-yellow">·</span> Brand Identity{" "}
               <span className="text-yellow">·</span> Digital Visuals
-            </p>
+            </Text>
 
             <div
               className="mt-12 flex flex-wrap items-center gap-6 reveal"
@@ -159,9 +160,9 @@ function Lab() {
             >
               <Link
                 to="/work"
-                className="group relative inline-flex items-center gap-3 bg-yellow text-ink px-8 py-4 font-medium overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_-5px_var(--yellow)] hover:-translate-y-1"
+                className="group relative inline-flex items-center gap-3 bg-yellow text-black px-8 py-4 font-medium overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_-5px_var(--yellow)] hover:-translate-y-1"
               >
-                <span className="absolute inset-0 bg-cream translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <span className="absolute inset-0 bg-light translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 <span className="relative">View Projects</span>
                 <span
                   aria-hidden
@@ -172,7 +173,7 @@ function Lab() {
               </Link>
               <Link
                 to="/contact"
-                className="text-sm text-cream/70 hover:text-yellow border-b border-cream/20 hover:border-yellow pb-1 transition-colors"
+                className="text-sm text-light/70 hover:text-yellow border-b border-light/20 hover:border-yellow pb-1 transition-colors"
               >
                 Or start a conversation ↗
               </Link>
@@ -188,25 +189,25 @@ function Lab() {
             }}
           >
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-cream/40 mb-2">Coords</p>
-              <p className="font-mono text-xs text-cream/80">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-light/40 mb-2">Coords</p>
+              <p className="font-mono text-xs text-light/80">
                 {(mouse.x * 100).toFixed(1)} / {(mouse.y * 100).toFixed(1)}
               </p>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-cream/40 mb-2">Status</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-light/40 mb-2">Status</p>
               <p className="font-mono text-xs text-yellow">● Online</p>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-cream/40 mb-2">Index</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-light/40 mb-2">Index</p>
               <p className="font-display text-3xl">001</p>
             </div>
           </aside>
         </div>
 
         {/* Bottom ticker */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-cream/10 bg-ink/40 backdrop-blur-md">
-          <div className="mx-auto max-w-400 px-6 md:px-10 py-4 flex justify-between items-center text-[11px] uppercase tracking-[0.25em] text-cream/50">
+        <div className="absolute bottom-0 left-0 right-0 border-t border-light/10 bg-black/40 backdrop-blur-md">
+          <div className="mx-auto max-w-400 px-6 md:px-10 py-4 flex justify-between items-center text-[11px] uppercase tracking-[0.25em] text-light/50">
             <span>Scroll to explore</span>
             <span className="hidden md:inline animate-pulse">▼</span>
             <span>TOBOU Charmel — Independent Designer</span>
@@ -215,7 +216,7 @@ function Lab() {
       </section>
 
       {/* Following showcase strip */}
-      <section className="py-32 border-t border-cream/10 relative overflow-hidden">
+      <section className="py-32 border-t border-light/10 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full opacity-15 blur-[120px]"
@@ -232,7 +233,7 @@ function Lab() {
             </p>
             <Link
               to="/work"
-              className="inline-flex items-center gap-3 mt-12 text-cream/80 hover:text-yellow border-b border-cream/20 hover:border-yellow pb-1 transition-colors"
+              className="inline-flex items-center gap-3 mt-12 text-light/80 hover:text-yellow border-b border-light/20 hover:border-yellow pb-1 transition-colors"
             >
               See selected projects ↗
             </Link>
@@ -242,7 +243,7 @@ function Lab() {
 
       <SelectedWorks />
 
-      <SiteFooter />
+      
     </div>
   );
 }

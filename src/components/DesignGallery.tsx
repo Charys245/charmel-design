@@ -1,5 +1,28 @@
 import { useState } from "react";
-import { X, Maximize2, ZoomIn } from "lucide-react";
+import { X, Maximize2, ZoomIn, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Heading, Text } from "./core/Typography";
+
+// Branding & Identity images
+import continium from "@/assets/images/charte/Continium Capital/continium-capital.webp";
+import bodygoal from "@/assets/images/charte/bodygoal/presentation-logo/charte graphique BODYGOAL copie_page-0025.webp";
+import sciKp from "@/assets/images/charte/SCI KP/Mock.webp";
+import delet from "@/assets/images/charte/Delet/DELET_charte_graphique_page-0001.webp";
+import sevenz from "@/assets/images/charte/SevenZ/SevenZ_2.webp";
+
+// Event images
+import re2025 from "@/assets/images/event/RE-2025/V2-OFFICIEL-RE-2025-ALL-PRICE.webp";
+import re2026 from "@/assets/images/event/RE-2026/Theme-RE-2K26.webp";
+import scaj from "@/assets/images/event/scaj/bloc-notes1.webp";
+import reseautage from "@/assets/images/event/resautage/RESEAUTAGE-IMPACT-RE-23.webp";
+import didos from "@/assets/images/event/didos-atelier/affiche-dido's-au-programme.webp";
+
+// YouTube thumbnails
+import messi from "@/assets/images/MiniatureYoutube/Messi VS Maradonna__.webp";
+import friperie from "@/assets/images/MiniatureYoutube/_3 JOURS pour GÉRER une FRIPERIE.webp";
+import intoxication from "@/assets/images/MiniatureYoutube/INTOXICATION_ALIMENTAIRE_V2.webp";
+import explose from "@/assets/images/MiniatureYoutube/explose.webp";
+import linkedin from "@/assets/images/MiniatureYoutube/__Comment modifier ses photos directement sur Linkedin.webp";
 
 type GalleryItem = { id: number; title: string; sub: string; img: string };
 
@@ -16,132 +39,66 @@ interface ScrollingRowProps {
 }
 
 const DesignGallery = () => {
-  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [__activeItem, setActiveItem] = useState<string | null>(null);
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
-  const categories = [
+  const categories: Category[] = [
     {
       title: "Branding & Identity",
       direction: "left",
       items: [
-        {
-          id: 1,
-          title: "Lumina Tech",
-          sub: "Brand System",
-          img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 2,
-          title: "Naturale",
-          sub: "Visual Identity",
-          img: "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 3,
-          title: "Apex Dynamics",
-          sub: "Logo Design",
-          img: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 4,
-          title: "Velvet Co.",
-          sub: "Packaging",
-          img: "https://images.unsplash.com/photo-1635405074683-96d6921a2a68?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 5,
-          title: "Solstice",
-          sub: "Style Guide",
-          img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
-        },
+        { id: 1, title: "Continium Capital", sub: "Identité de marque", img: continium },
+        { id: 2, title: "BodyGoal", sub: "Charte graphique", img: bodygoal },
+        { id: 3, title: "SCI KP", sub: "Identité visuelle", img: sciKp },
+        { id: 4, title: "Delet", sub: "Logo Design", img: delet },
+        { id: 5, title: "SevenZ", sub: "Identité de marque", img: sevenz },
       ],
     },
     {
       title: "Posters & Event Design",
       direction: "right",
       items: [
-        {
-          id: 6,
-          title: "Berlin Echo",
-          sub: "Music Festival",
-          img: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 7,
-          title: "Glow 2024",
-          sub: "Art Exhibition",
-          img: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 8,
-          title: "Motion Theory",
-          sub: "Conference",
-          img: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 9,
-          title: "Retro Future",
-          sub: "Cinema Poster",
-          img: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 10,
-          title: "Urban Pulse",
-          sub: "Street Event",
-          img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200",
-        },
+        { id: 6, title: "Réseautage Impact 2025", sub: "Événement", img: re2025 },
+        { id: 7, title: "Réseautage Impact 2026", sub: "Événement", img: re2026 },
+        { id: 8, title: "SCAJ", sub: "Design événementiel", img: scaj },
+        { id: 9, title: "Réseautage", sub: "Accompagnement", img: reseautage },
+        { id: 10, title: "Dido's Atelier", sub: "Programme", img: didos },
       ],
     },
     {
       title: "Social Media & Digital",
       direction: "left",
       items: [
-        {
-          id: 11,
-          title: "Nike Concept",
-          sub: "Instagram Campaign",
-          img: "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 12,
-          title: "Crypto UI",
-          sub: "Digital Ads",
-          img: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 13,
-          title: "Vogue Story",
-          sub: "Social Layout",
-          img: "https://images.unsplash.com/photo-1523381235312-3a1647fa9921?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 14,
-          title: "Zen App",
-          sub: "Carousel Design",
-          img: "https://images.unsplash.com/photo-1551288049-bbbda5366391?auto=format&fit=crop&q=80&w=1200",
-        },
-        {
-          id: 15,
-          title: "Hyper Focus",
-          sub: "YouTube Thumbnail",
-          img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200",
-        },
+        { id: 11, title: "Messi VS Maradona", sub: "Miniature YouTube", img: messi },
+        { id: 12, title: "Gérer une Friperie", sub: "Miniature YouTube", img: friperie },
+        { id: 13, title: "Intoxication Alimentaire", sub: "Miniature YouTube", img: intoxication },
+        { id: 14, title: "Explose", sub: "Miniature YouTube", img: explose },
+        { id: 15, title: "Photos LinkedIn", sub: "Miniature YouTube", img: linkedin },
       ],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-100 font-sans selection:bg-yellow-400 selection:text-black">
+    <div id='projets' className="min-h-screen bg-[#0a0a0a] text-zinc-100 font-sans selection:bg-yellow-400 selection:text-black">
       {/* Header */}
-      <header className="px-8 pt-20 pb-12">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
-            DESIGN GALLERY
-          </h1>
-          <p className="text-zinc-500 max-w-lg text-lg border-l border-yellow-400 pl-6">
-            Une vitrine immersive de systèmes de marque, de visuels d'événements et de récits
-            numériques. Faites défiler pour explorer l'archive visuelle.
-          </p>
+      <header className="px-8 md:px-16 xl:px-43 2xl:px-56 pt-20 pb-12">
+        <div>
+          <Heading as="h1" className="font-bold mb-6">
+            DESIGN <span className="text-yellow">GALLERY</span>
+          </Heading>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <Text className="text-zinc-500 max-w-lg border-l border-yellow pl-6">
+              Une vitrine immersive de systèmes de marque, de visuels d'événements et de récits
+              numériques. Faites défiler pour explorer l'archive visuelle.
+            </Text>
+            <Link
+              to="/work"
+              className="group inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-semibold text-black transition-all duration-300 hover:gap-3 hover:shadow-[0_10px_40px_rgba(255,215,0,0.3)] bg-yellow shrink-0"
+            >
+              Voir les travaux
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -178,23 +135,14 @@ const DesignGallery = () => {
               onClick={(e) => e.stopPropagation()}
             />
             <div className="text-center animate-in slide-in-from-bottom-4 duration-500 delay-150">
-              <p className="text-yellow-400 font-mono text-sm tracking-widest uppercase mb-1">
+              <p className="text-yellow font-mono text-sm tracking-widest uppercase mb-2">
                 {selectedImage.sub}
               </p>
-              <h2 className="text-4xl font-bold tracking-tight">{selectedImage.title}</h2>
+              <Heading as="h2" className="font-bold">{selectedImage.title}</Heading>
             </div>
           </div>
         </div>
       )}
-
-      {/* Footer info */}
-      <footer className="fixed bottom-8 right-8 pointer-events-none z-10">
-        <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-zinc-600">
-          <span>{activeItem ? `Focus: ${activeItem}` : "Survolez pour inspecter"}</span>
-          <div className="w-12 h-px bg-zinc-800"></div>
-          <span>Archive 2024</span>
-        </div>
-      </footer>
 
       <style>{`
         @keyframes scroll-left {
@@ -223,13 +171,6 @@ const ScrollingRow = ({ category, onItemHover, onSelectImage }: ScrollingRowProp
 
   return (
     <div className="mb-8 group pause-animation">
-      {/* <div className="px-8 mb-6 flex items-end justify-between max-w-7xl mx-auto">
-        <h2 className="text-xs uppercase tracking-[0.3em] text-zinc-500 font-semibold">
-          {category.title}
-        </h2>
-        <div className="h-px grow mx-8 bg-zinc-900"></div>
-      </div> */}
-
       <div className="relative flex overflow-hidden">
         <div className={`flex gap-8 px-4 ${scrollClass}`}>
           {items.map((item, i) => (
@@ -258,10 +199,9 @@ const ScrollingRow = ({ category, onItemHover, onSelectImage }: ScrollingRowProp
                 <div className="translate-y-4 group-hover/item:translate-y-0 transition-transform duration-500">
                   <div className="flex justify-between items-end">
                     <div>
-                      <p className="text-yellow-400 text-xs font-mono mb-2 tracking-widest">
+                      <p className="text-yellow text-xs font-mono mb-2 tracking-widest uppercase">
                         {item.sub}
                       </p>
-                      {/* <h3 className="text-3xl font-bold tracking-tight">{item.title}</h3> */}
                     </div>
                     <div className="p-3 border border-white/20 rounded-full bg-white/10 backdrop-blur-md">
                       <Maximize2 size={20} className="text-white" />

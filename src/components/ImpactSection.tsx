@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { TrendingUp, Users, ShieldCheck, Zap, Globe, Award } from "lucide-react";
+import { Container } from "./core/Container";
+import { Heading, Text } from "./core/Typography";
 
 interface AnimatedCounterProps {
   target: number;
@@ -61,7 +63,7 @@ const AnimatedCounter = ({ target, duration = 1500 }: AnimatedCounterProps) => {
 /**
  * Carte de métrique individuelle
  */
-const MetricCard = ({ category, title, value, suffix, detail, icon: Icon } : MetricCardProps) => {
+const MetricCard = ({ category, title, value, suffix, detail, icon: Icon }: MetricCardProps) => {
   return (
     <div className="group relative bg-[#141414] border border-[#222] hover:border-yellow p-8 rounded-2xl transition-all duration-500 ease-out hover:-translate-y-2">
       <div className="flex justify-between items-start mb-4">
@@ -112,7 +114,7 @@ export default function ImpactSection() {
     {
       category: "Stratégie de Marque",
       title: "Identités Visuelles",
-      value: 42,
+      value: 20,
       suffix: "",
       detail:
         "Création de langages visuels uniques incluant logos, typographies et chartes graphiques.",
@@ -148,36 +150,37 @@ export default function ImpactSection() {
   ];
 
   return (
-    <div className="min-h-screen bg-ink text-white p-8 md:p-20 selection:bg-yellow selection:text-black font-['Inter']">
-      <div className="max-w-6xl mx-auto">
-        {/* En-tête */}
-        <header className="mb-20">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-2 rounded-full bg-yellow shadow-[0_0_10px_#E2FF00]"></div>
-            <span className="text-xs uppercase tracking-[0.4em] font-bold text-yellow">
-              Indicateurs de Performance
-            </span>
+    <Container className="bg-black bord er borde r-red-700 ">
+      <section className="bord er bo rder-red-700  text-white ">
+        <div className="max- w- 6xl mx -auto">
+          {/* En-tête */}
+          <header className="mb-10 md:mb-20">
+            {/* <div className="flex items-center gap-3 mb-6">
+              <div className="w-2 h-2 rounded-full bg-yellow shadow-[0_0_10px_#E2FF00]"></div>
+              <span className="text-xs uppercase tracking-[0.4em] font-bold text-yellow">
+                Indicateurs de Performance
+              </span>
+            </div> */}
+
+            <Heading as="h1" className="font-bold mb-6">
+              Impact <span className="text-yellow">Mesurable.</span>
+            </Heading>
+
+            <Text className="max-w-md text-gray-400">
+              Le design est plus qu'une esthétique ; c'est un levier de croissance. Voici comment
+              mon travail s'est traduit en résultats concrets pour mes clients.
+            </Text>
+          </header>
+
+          {/* Grille de Métriques */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {metrics.map((item, index) => (
+              <MetricCard key={index} {...item} />
+            ))}
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 font-['Space_Grotesk']">
-            Impact <span className="text-yellow">Mesurable.</span>
-          </h1>
-
-          <p className="max-w-md text-gray-400 text-sm leading-relaxed">
-            Le design est plus qu'une esthétique ; c'est un levier de croissance. Voici comment mon
-            travail s'est traduit en résultats concrets pour mes clients.
-          </p>
-        </header>
-
-        {/* Grille de Métriques */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {metrics.map((item, index) => (
-            <MetricCard key={index} {...item} />
-          ))}
-        </div>
-
-        {/* Pied de page */}
-        <footer className="mt-20 pt-8 border-t border-[#222] flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Pied de page */}
+          {/* <footer className="mt-20 pt-8 border-t border-[#222] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[#444] text-[10px] uppercase tracking-widest font-medium">
             Données basées sur les projets 2023—2025
           </p>
@@ -185,12 +188,13 @@ export default function ImpactSection() {
             <span className="hover:text-yellow cursor-pointer transition-colors">Case Studies</span>
             <span className="hover:text-yellow cursor-pointer transition-colors">Contact</span>
           </div>
-        </footer>
-      </div>
+        </footer> */}
+        </div>
 
-      <style>{`
+        <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap');
       `}</style>
-    </div>
+      </section>
+    </Container>
   );
 }
