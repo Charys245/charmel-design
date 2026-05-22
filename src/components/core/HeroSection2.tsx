@@ -156,13 +156,13 @@ export default function HeroSection2() {
             className="relative flex justify-center lg:justify-end"
           >
             {/* Yellow Glow */}
-            <div className="absolute w-[450px] h-[450px] rounded-full bg-yellow-400/80 blur-3xl opacity-30" />
+            <div className="absolute w-112.5 h-112.5 rounded-full bg-yellow-400/80 blur-3xl opacity-30" />
 
             {/* Main Portrait */}
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
-                className="w-[500px] h-[700px] object-cover rounded-[40px] grayscale brightness-75"
+                className="w-125 h-175 object-cover rounded-[40px] grayscale brightness-75"
               />
 
               {/* Floating Circle */}
@@ -202,7 +202,7 @@ export default function HeroSection2() {
                 whileHover={{
                   y: -10,
                 }}
-                className={`relative min-w-[250px] ${
+                className={`relative min-w-62.5 ${
                   index === 2
                     ? "scale-110 z-20"
                     : "opacity-90"
@@ -212,11 +212,11 @@ export default function HeroSection2() {
                   <img
                     src={work.image}
                     className={`w-full ${
-                      index === 2 ? "h-[420px]" : "h-[340px]"
+                      index === 2 ? "h-105" : "h-85"
                     } object-cover`}
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-2xl font-light">

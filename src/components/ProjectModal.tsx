@@ -168,7 +168,7 @@ export function ProjectModal({ project, startIndex = 0, onClose }: ProjectModalP
                 e.stopPropagation();
                 setCurrentIndex(idx);
               }}
-              className={`flex-shrink-0 cursor-pointer ${
+              className={`shrink-0 cursor-pointer ${
                 isBanner ? "w-24 h-8" : "w-16 h-16"
               } rounded overflow-hidden border-2 transition-all ${
                 idx === currentIndex

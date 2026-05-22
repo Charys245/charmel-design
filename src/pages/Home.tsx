@@ -6,9 +6,9 @@ import Services from "../components/core/Services";
 import Testimonials from "../components/core/Testimonials";
 import AboutSection from "../components/core/AboutSection";
 import { SEO } from "../components/core/SEO";
-import TestSection from "../components/core/TestSection";
-import FloatingCards from "../components/core/FloatingCards";
-import MarqueeBottom from "../components/core/MarqueeBottom";
+// import TestSection from "../components/core/TestSection";
+// import FloatingCards from "../components/core/FloatingCards";
+// import MarqueeBottom from "../components/core/MarqueeBottom";
 
 function Home() {
   return (
