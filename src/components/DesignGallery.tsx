@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { X, Maximize2, ZoomIn, ArrowUpRight } from "lucide-react";
+import { useState, useRef } from "react";
+import { X, Maximize2, ZoomIn, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Heading, Text } from "./core/Typography";
 
@@ -153,33 +153,92 @@ const DesignGallery = () => {
           0% { transform: translateX(-50%); }
           100% { transform: translateX(0); }
         }
-        .animate-scroll-left { animation: scroll-left 40s linear infinite; }
-        .animate-scroll-right { animation: scroll-right 40s linear infinite; }
-        .pause-animation:hover .animate-scroll-left,
-        .pause-animation:hover .animate-scroll-right {
-          animation-play-state: paused;
+
+        /* Mobile: no animation, manual scroll */
+        .animate-scroll-left,
+        .animate-scroll-right {
+          animation: none;
         }
+
+        /* Desktop: enable animations */
+        @media (min-width: 768px) {
+          .animate-scroll-left { animation: scroll-left 40s linear infinite; }
+          .animate-scroll-right { animation: scroll-right 40s linear infinite; }
+          .pause-animation:hover .animate-scroll-left,
+          .pause-animation:hover .animate-scroll-right {
+            animation-play-state: paused;
+          }
+        }
+
+        /* Hide scrollbar on mobile */
+        .gallery-scroll-container {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        .gallery-scroll-container::-webkit-scrollbar {
+          display: none;
+        }
+
       `}</style>
     </div>
   );
 };
 
 const ScrollingRow = ({ category, onItemHover, onSelectImage }: ScrollingRowProps) => {
-  const items = [...category.items, ...category.items];
+  // Mobile: items uniques | Desktop: doublés pour l'animation infinie
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const items = isMobile ? category.items : [...category.items, ...category.items];
   const scrollClass =
     category.direction === "left" ? "animate-scroll-left" : "animate-scroll-right";
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const scrollAmount = 300;
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <div className="mb-8 group pause-animation">
-      <div className="relative flex overflow-hidden">
-        <div className={`flex gap-8 px-4 ${scrollClass}`}>
+    <div className="mb-8 group pause-animation relative">
+      {/* Mobile navigation buttons */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          scroll("left");
+        }}
+        className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-40 bg-black/90 backdrop-blur-sm p-3 rounded-full border border-yellow active:scale-90 transition-transform"
+        aria-label="Défiler à gauche"
+      >
+        <ChevronLeft className="w-6 h-6 text-yellow" />
+      </button>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          scroll("right");
+        }}
+        className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-40 bg-black/90 backdrop-blur-sm p-3 rounded-full border border-yellow active:scale-90 transition-transform"
+        aria-label="Défiler à droite"
+      >
+        <ChevronRight className="w-6 h-6 text-yellow" />
+      </button>
+
+      {/* Mobile: manual scroll | Desktop: auto-scroll animation */}
+      <div
+        ref={scrollRef}
+        className="gallery-scroll-container relative flex overflow-x-auto md:overflow-hidden snap-x snap-mandatory md:snap-none"
+      >
+        <div className={`flex gap-4 md:gap-8 px-4 ${scrollClass}`}>
           {items.map((item, i) => (
             <div
               key={`${item.id}-${i}`}
               onMouseEnter={() => onItemHover(item.title)}
               onMouseLeave={() => onItemHover(null)}
               onClick={() => onSelectImage(item)}
-              className="relative shrink-0 w-112.5 aspect-4/5 md:w-150 md:aspect-16/10 bg-zinc-900 overflow-hidden rounded-sm cursor-none group/item transition-all duration-700 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+              className="relative shrink-0 w-72 aspect-4/5 md:w-150 md:aspect-16/10 bg-zinc-900 overflow-hidden rounded-sm cursor-none group/item transition-all duration-700 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] snap-center md:snap-align-none"
             >
               <img
                 src={item.img}

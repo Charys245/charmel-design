@@ -4,27 +4,6 @@ import work4 from "@/assets/images/Visuel/Free_Book_Mockup_2.webp";
 import work5 from "@/assets/images/event/scaj/bloc-notes1.webp";
 
 import work2 from "@/assets/images/charte/SCI KP/tasse.webp";
-// import work2 from "@/assets/images/MiniatureYoutube/INTOXICATION_ALIMENTAIRE_V2.webp";
-
-function Badge({
-  className,
-  letter,
-  dark = false,
-}: {
-  className: string;
-  letter: string;
-  dark?: boolean;
-}) {
-  return (
-    <div
-      className={`absolute z-40 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-lg font-serif-italic ring-4 ring-background ${className} ${
-        dark ? "text-ink" : "text-yellow"
-      }`}
-    >
-      {letter}
-    </div>
-  );
-}
 
 const FloatingCards = () => {
   const cards = [
@@ -83,13 +62,6 @@ const FloatingCards = () => {
   return (
     <section className="bg-black">
       <div className=" relative mt-6 md:mt-12 max-w-6xl mx-auto h- [560px]">
-        {/* Floating circular accents (like flags) */}
-        {/* <Badge className="left-[18%] top-[6%] bg-ink float-b" letter="c" /> */}
-      {/* <Badge className="right-[20%] top-[2%] bg-yellow float-a" letter="t" dark /> */}
-      {/* <Badge className="left-[8%] bottom-[8%] bg-yellow float-a" letter="✦" dark /> */}
-      <Badge className="right-[10%] bottom-[14%] bg-ink float-c" letter="◆" />
-      {/* <Badge className="left-[42%] -top-2 bg-ink float-c small" letter="" /> */}
-
         <div className="flex items-end justify-center gap-3 sm:gap-5 h-full">
           {cards.map((c, i) => (
             <div

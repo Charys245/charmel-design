@@ -55,7 +55,7 @@ function Work() {
         </section>
 
         {/* Filters - Sticky */}
-        <div className="sticky top-18 z-40 bg-black/95 backdrop-blur-sm py-4 -mx-8 px-8 md:-mx-16 md:px-16 xl:-mx-43 xl:px-43 2xl:-mx-56 2xl:px-56 border-b border-white/10">
+        <div className="sticky top-17.5 z-40 bg-black/95 backdrop-blur-sm py-4 -mx-8 px-8 md:-mx-16 md:px-16 xl:-mx-43 xl:px-43 2xl:-mx-56 2xl:px-56 border-b border-white/10">
           <div className="flex flex-wrap gap-3 reveal" style={{ animationDelay: "0.35s" }}>
             {filterOptions.map((filter) => (
               <button

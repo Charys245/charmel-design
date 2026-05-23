@@ -1,8 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-// import work1 from "@/assets/work-renaissance.webp";
-// import work2 from "@/assets/work-youtube.webp";
-// import work3 from "@/assets/work-crypto.webp";
-// import work4 from "@/assets/work-sevenz.webp";
 import { Heading, Text } from "./core/Typography";
 import { useT } from "../i18n/LanguageContext";
 import FloatingCards from "./core/FloatingCards";

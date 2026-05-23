@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { TrendingUp, Users, ShieldCheck, Zap, Globe, Award } from "lucide-react";
 import { Container } from "./core/Container";
 import { Heading, Text } from "./core/Typography";
+import { useT } from "../i18n/LanguageContext";
 
 interface AnimatedCounterProps {
   target: number;
@@ -93,58 +94,55 @@ const MetricCard = ({ category, title, value, suffix, detail, icon: Icon }: Metr
  * Composant Principal
  */
 export default function ImpactSection() {
+  const { t } = useT();
+
   const metrics = [
     {
-      category: "Portée Contenu",
-      title: "Miniatures YouTube",
+      category: t("impact.1.category"),
+      title: t("impact.1.title"),
       value: 300,
       suffix: "+",
-      detail: "Augmentation moyenne du CTR de 14% sur 5 chaînes majeures (Tech & Lifestyle).",
+      detail: t("impact.1.detail"),
       icon: TrendingUp,
     },
     {
-      category: "Conseil",
-      title: "Entrepreneurs Accompagnés",
+      category: t("impact.2.category"),
+      title: t("impact.2.title"),
       value: 15,
       suffix: "+",
-      detail:
-        "Stratégie visuelle de bout en bout pour des startups, du stade de l'idée à la série A.",
+      detail: t("impact.2.detail"),
       icon: Users,
     },
     {
-      category: "Stratégie de Marque",
-      title: "Identités Visuelles",
+      category: t("impact.3.category"),
+      title: t("impact.3.title"),
       value: 20,
       suffix: "",
-      detail:
-        "Création de langages visuels uniques incluant logos, typographies et chartes graphiques.",
+      detail: t("impact.3.detail"),
       icon: ShieldCheck,
     },
     {
-      category: "Événementiel",
-      title: "Événements Majeurs",
+      category: t("impact.4.category"),
+      title: t("impact.4.title"),
       value: 8,
       suffix: "",
-      detail:
-        "Graphismes environnementaux et assets digitaux pour des conférences de 5000+ personnes.",
+      detail: t("impact.4.detail"),
       icon: Globe,
     },
     {
-      category: "Succès Client",
-      title: "Taux de Rétention",
+      category: t("impact.5.category"),
+      title: t("impact.5.title"),
       value: 95,
       suffix: "%",
-      detail:
-        "Pourcentage de clients revenant pour un second projet au cours de la même année fiscale.",
+      detail: t("impact.5.detail"),
       icon: Award,
     },
     {
-      category: "Flux de Travail",
-      title: "Vitesse d'Exécution",
+      category: t("impact.6.category"),
+      title: t("impact.6.title"),
       value: 24,
       suffix: "h",
-      detail:
-        "Délai moyen pour la livraison des premiers concepts visuels sur les packs standards.",
+      detail: t("impact.6.detail"),
       icon: Zap,
     },
   ];
@@ -163,12 +161,11 @@ export default function ImpactSection() {
             </div> */}
 
             <Heading as="h1" className="font-bold mb-6">
-              Impact <span className="text-yellow">Mesurable.</span>
+              {t("impact.title")} <span className="text-yellow">{t("impact.title.em")}</span>
             </Heading>
 
             <Text className="max-w-md text-gray-400">
-              Le design est plus qu'une esthétique ; c'est un levier de croissance. Voici comment
-              mon travail s'est traduit en résultats concrets pour mes clients.
+              {t("impact.description")}
             </Text>
           </header>
 
