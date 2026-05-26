@@ -64,7 +64,7 @@ export function SiteHeader({ forceDark = false }: { forceDark?: boolean }) {
   const langBtnBase =
     "inline-flex items-center gap-1 px-2.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.15em] border transition-colors";
   const langBtnDark = "border-white/50 text-white/80 hover:border-yellow hover:text-yellow";
-  const langBtnLight = "border-white/50 text-white/80 hover:border-yellow hover:text-black";
+  const langBtnLight = "border-white/50 text-white/80 hover:border-yellow hover:te xt-black";
 
   return (
     <header
@@ -74,13 +74,13 @@ export function SiteHeader({ forceDark = false }: { forceDark?: boolean }) {
     >
       <div className="mx-auto flex max-w -400 items-center justify-between px-8 md:px-16 xl:px-43 2xl:px-56 py-5">
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="inline-block h-2.5 w-2.5 rounded-full bg-yellow group-hover:scale-125 transition-transform" />
+          {/* <span className="inline-block h-2.5 w-2.5 rounded-full bg-yellow group-hover:scale-125 transition-transform" /> */}
           <span
             className={`font-display text-base font-semibold tracking-tight ${
               scrolled ? "text-white" : wordmarkColor
             }`}
           >
-            Studio<span className="text-yellow">.</span>
+            Charmel {" "} <span className="text-yellow">TOBOU</span>
           </span>
         </Link>
 
@@ -109,7 +109,7 @@ export function SiteHeader({ forceDark = false }: { forceDark?: boolean }) {
             }`}
           >
             <span className={lang === "en" ? "text-yellow" : "text-white"}>EN</span>
-            <span className="opacity-40">/</span>
+            <span className="opacity-70">/</span>
             <span className={lang === "fr" ? "text-yellow" : ""}>FR</span>
           </button>
 

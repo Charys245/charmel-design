@@ -201,8 +201,20 @@
     text-transform: uppercase;
     font-weight: 500;
   }
-  .marquee-container {
-    animation: marquee 25s linear infinite;
+  .marquee-tags {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+  .marquee-tags:hover {
+    animation-play-state: paused;
+  }
+  .marquee-footer {
+    display: flex;
+    width: max-content;
+    animation: marquee 180s linear infinite;
+    will-change: transform;
   }
   @keyframes marquee {
     0% {

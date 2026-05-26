@@ -82,7 +82,8 @@ export const dictionaries = {
     "ft.services": "Services",
     "ft.about": "About",
     "ft.contact": "Contact",
-    "ft.marquee": "Youtube Thumbnails · Brand · Identity · Studio · Brand · Identity · Studio · Graphic Design ·",
+    "ft.marquee":
+      "Brand · Identity · Studio · Brand · Identity · Studio · Graphic Design · Youtube Thumbnails ·",
 
     // Lang
     "lang.toggle": "FR",
@@ -93,7 +94,8 @@ export const dictionaries = {
     "v2hero.headline.3": "that help",
     "v2hero.headline.4": "brands",
     "v2hero.headline.5": "grow.",
-    "v2hero.subtitle": "Brand Designer & Graphic Designer — I create logos, social media systems and event visuals that turn attention into trust.",
+    "v2hero.subtitle":
+      "Graphic designer & Brand Designer, I create visual identities, visuals for social networks and events that transform attention into trust.",
     "v2hero.cta.work": "View my work",
     "v2hero.cta.project": "Start a project",
     "v2hero.badge": "Brand Designer",
@@ -107,30 +109,35 @@ export const dictionaries = {
     // Services
     "services.title": "What I",
     "services.title.em": "do.",
-    "services.intro": "Four core practices. One standard: visual systems designed to perform at the highest level.",
+    "services.intro":
+      "Four core practices. One standard: visual systems designed to perform at the highest level.",
     "services.process": "— Process",
     "services.process.text": "Discover · Strategize · Design · Deliver. Every project, every time.",
     "services.cta": "Start a brief",
     "services.01.title": "Brand Identity",
-    "services.01.body": "Logo systems, naming, visual languages and brand guidelines designed to last decades.",
+    "services.01.body":
+      "Logo systems, naming, visual languages and brand guidelines designed to last decades.",
     "services.01.d1": "Logo & monogram",
     "services.01.d2": "Typography & colors",
     "services.01.d3": "Brand guidelines",
     "services.01.d4": "Brand applications",
     "services.02.title": "Social Media Design",
-    "services.02.body": "Editorial content systems for brands that want to look like a magazine, not a meme page.",
+    "services.02.body":
+      "Editorial content systems for brands that want to look like a magazine, not a meme page.",
     "services.02.d1": "Templates & frameworks",
     "services.02.d2": "Content art direction",
     "services.02.d3": "Carousel design",
     "services.02.d4": "Brand consistency audit",
     "services.03.title": "Print & Physical Branding",
-    "services.03.body": "Stationery, packaging, signage and merchandising — the tangible expression of your identity.",
+    "services.03.body":
+      "Stationery, packaging, signage and merchandising — the tangible expression of your identity.",
     "services.03.d1": "Stationery suite",
     "services.03.d2": "Packaging design",
     "services.03.d3": "Signage systems",
     "services.03.d4": "Merchandising",
     "services.04.title": "Event Visual Identity",
-    "services.04.body": "Complete art direction for conferences, festivals and gatherings — from poster to stage.",
+    "services.04.body":
+      "Complete art direction for conferences, festivals and gatherings — from poster to stage.",
     "services.04.d1": "Identity & key visual",
     "services.04.d2": "Print & signage materials",
     "services.04.d3": "Stage & screen graphics",
@@ -148,8 +155,10 @@ export const dictionaries = {
     // About Section
     "about.name": "Charmel Tobou",
     "about.role": "Graphic Designer & Creative Developer",
-    "about.intro": "I create bold visual identities and modern digital visuals for brands, entrepreneurs and events.",
-    "about.philosophy": "With a background in computer engineering, I combine visual creativity, structure and precision to design impactful and meaningful visuals.",
+    "about.intro":
+      "I create bold visual identities and modern digital visuals for brands, entrepreneurs and events.",
+    "about.philosophy":
+      "With a background in computer engineering, I combine visual creativity, structure and precision to design impactful and meaningful visuals.",
     "about.years": "Years",
     "about.location": "Cotonou",
     "about.country": "Benin",
@@ -162,22 +171,28 @@ export const dictionaries = {
     "testimonials.cta.button": "Start a Chat",
     "testimonials.1.name": "Julian Voss",
     "testimonials.1.role": "Founder, Zenith Agency",
-    "testimonials.1.message": "The brand identity is honestly incredible. I've been staring at the logo for 20 minutes. It feels... expensive. Exactly what we needed.",
+    "testimonials.1.message":
+      "The brand identity is honestly incredible. I've been staring at the logo for 20 minutes. It feels... expensive. Exactly what we needed.",
     "testimonials.2.name": "Sarah Chen",
     "testimonials.2.role": "Art Director",
-    "testimonials.2.message": "Final files received! Everything looks perfect. Thanks for the quick turnaround on the revisions.",
+    "testimonials.2.message":
+      "Final files received! Everything looks perfect. Thanks for the quick turnaround on the revisions.",
     "testimonials.3.name": "Marcus Thorne",
     "testimonials.3.role": "Marketing Lead",
-    "testimonials.3.message": "Client loved the pitch deck. The typography choices are bold but they work so well. Let's start on the social assets next week?",
+    "testimonials.3.message":
+      "Client loved the pitch deck. The typography choices are bold but they work so well. Let's start on the social assets next week?",
     "testimonials.4.name": "Elena Rossi",
     "testimonials.4.role": "Luxury Retailer",
-    "testimonials.4.message": "Just saw the packaging prototypes. The texture and the gold foil placement is chef's kiss. Absolute perfection.",
+    "testimonials.4.message":
+      "Just saw the packaging prototypes. The texture and the gold foil placement is chef's kiss. Absolute perfection.",
     "testimonials.5.name": "David K.",
     "testimonials.5.role": "Tech Startup",
-    "testimonials.5.message": "Man, that animation sequence is so smooth. You really captured the 'futuristic' vibe without making it look cheesy.",
+    "testimonials.5.message":
+      "Man, that animation sequence is so smooth. You really captured the 'futuristic' vibe without making it look cheesy.",
     "testimonials.6.name": "Sophia Wright",
     "testimonials.6.role": "E-commerce Manager",
-    "testimonials.6.message": "Conversion rates are already up since the redesign went live. Your eye for UX is unmatched. Best investment we've made this year.",
+    "testimonials.6.message":
+      "Conversion rates are already up since the redesign went live. Your eye for UX is unmatched. Best investment we've made this year.",
 
     // Contact
     "contact.title": "Let's build something",
@@ -189,13 +204,15 @@ export const dictionaries = {
 
     // Work Page
     "workpage.title": "My Work",
-    "workpage.subtitle": "A selection of identity systems, event branding and digital design created for entrepreneurs, finance, sports and culture.",
+    "workpage.subtitle":
+      "A selection of identity systems, event branding and digital design created for entrepreneurs, finance, sports and culture.",
     "workpage.view": "View project",
 
     // Impact Section
     "impact.title": "Measurable",
     "impact.title.em": "Impact.",
-    "impact.description": "Design is more than aesthetics; it's a growth lever. Here's how my work has translated into concrete results for my clients.",
+    "impact.description":
+      "Design is more than aesthetics; it's a growth lever. Here's how my work has translated into concrete results for my clients.",
     "impact.1.category": "Content Reach",
     "impact.1.title": "YouTube Thumbnails",
     "impact.1.detail": "Average CTR increase of 14% across 5 major channels (Tech & Lifestyle).",
@@ -204,13 +221,16 @@ export const dictionaries = {
     "impact.2.detail": "End-to-end visual strategy for startups, from idea stage to Series A.",
     "impact.3.category": "Brand Strategy",
     "impact.3.title": "Visual Identities",
-    "impact.3.detail": "Creation of unique visual languages including logos, typography and brand guidelines.",
+    "impact.3.detail":
+      "Creation of unique visual languages including logos, typography and brand guidelines.",
     "impact.4.category": "Events",
     "impact.4.title": "Major Events",
-    "impact.4.detail": "Environmental graphics and digital assets for conferences of 5000+ attendees.",
+    "impact.4.detail":
+      "Environmental graphics and digital assets for conferences of 5000+ attendees.",
     "impact.5.category": "Client Success",
     "impact.5.title": "Retention Rate",
-    "impact.5.detail": "Percentage of clients returning for a second project within the same fiscal year.",
+    "impact.5.detail":
+      "Percentage of clients returning for a second project within the same fiscal year.",
     "impact.6.category": "Workflow",
     "impact.6.title": "Execution Speed",
     "impact.6.detail": "Average turnaround for first visual concepts on standard packages.",
@@ -296,7 +316,8 @@ export const dictionaries = {
     "ft.services": "Services",
     "ft.about": "À propos",
     "ft.contact": "Contact",
-    "ft.marquee": "Miniature Youtube · Identité Visuelle · Branding · Évènement · Graphic Design · Packaging",
+    "ft.marquee":
+      "Identité Visuelle · Branding · Évènement · Graphic Design · Packaging · Miniature  Youtube",
 
     // Lang
     "lang.toggle": "EN",
@@ -307,7 +328,8 @@ export const dictionaries = {
     "v2hero.headline.3": "qui font grandir",
     "v2hero.headline.4": "",
     "v2hero.headline.5": "votre marque.",
-    "v2hero.subtitle": "Brand Designer & Graphiste — je crée des logos, des systèmes pour réseaux sociaux et des visuels événementiels qui transforment l'attention en confiance.",
+    "v2hero.subtitle":
+      "Graphiste & Brand Designer, je crée des identités visuelles, des visuels pour réseaux sociaux et événements professionnels.",
     "v2hero.cta.work": "Voir mes travaux",
     "v2hero.cta.project": "Démarrer un projet",
     "v2hero.badge": "Brand Designer",
@@ -321,30 +343,36 @@ export const dictionaries = {
     // Services
     "services.title": "Ce que je",
     "services.title.em": "fais.",
-    "services.intro": "Quatre pratiques principales. Un seul standard : des systèmes visuels conçus pour performer au plus haut niveau.",
+    "services.intro":
+      "Quatre pratiques principales. Un seul standard : des systèmes visuels conçus pour performer au plus haut niveau.",
     "services.process": "— Processus",
-    "services.process.text": "Découvrir · Élaborer · Concevoir · Livrer. Chaque projet, à chaque fois.",
+    "services.process.text":
+      "Découvrir · Élaborer · Concevoir · Livrer. Chaque projet, à chaque fois.",
     "services.cta": "Démarrer un brief",
     "services.01.title": "Identité de marque",
-    "services.01.body": "Systèmes de logos, naming, langages visuels et chartes graphiques conçus pour durer des décennies.",
+    "services.01.body":
+      "Systèmes de logos, naming, langages visuels et chartes graphiques conçus pour durer des décennies.",
     "services.01.d1": "Logo & monogramme",
     "services.01.d2": "Typographie & couleurs",
     "services.01.d3": "Charte graphique",
     "services.01.d4": "Applications de marque",
     "services.02.title": "Design Réseaux Sociaux",
-    "services.02.body": "Systèmes de contenu éditorial pour les marques qui veulent ressembler à un magazine, pas à une page de mèmes.",
+    "services.02.body":
+      "Systèmes de contenu éditorial pour les marques qui veulent ressembler à un magazine, pas à une page de mèmes.",
     "services.02.d1": "Modèles & structures",
     "services.02.d2": "Direction artistique contenu",
     "services.02.d3": "Design de carrousels",
     "services.02.d4": "Audit de cohérence de marque",
     "services.03.title": "Print & Branding Physique",
-    "services.03.body": "Papeterie, packaging et supports d'affichage — l'expression tangible de votre identité.",
+    "services.03.body":
+      "Papeterie, packaging et supports d'affichage — l'expression tangible de votre identité.",
     "services.03.d1": "Suite papeterie",
     "services.03.d2": "Design packaging",
     "services.03.d3": "Bâches & affiches",
     "services.03.d4": "Produits dérivés",
     "services.04.title": "Identité Visuelle Événementielle",
-    "services.04.body": "Direction artistique complète pour conférences, festivals et rassemblements — de l'affiche à la scène.",
+    "services.04.body":
+      "Direction artistique complète pour conférences, festivals et rassemblements — de l'affiche à la scène.",
     "services.04.d1": "Identité & visuel clé",
     "services.04.d2": "Supports print & signalétique",
     "services.04.d3": "Graphismes scène & écran",
@@ -362,8 +390,10 @@ export const dictionaries = {
     // About Section
     "about.name": "Charmel Tobou",
     "about.role": "Graphiste & Développeur Créatif",
-    "about.intro": "Je crée des identités visuelles audacieuses et des visuels digitaux modernes pour les marques, entrepreneurs et événements.",
-    "about.philosophy": "Avec une formation en ingénierie informatique, je combine créativité visuelle, structure et précision pour concevoir des visuels impactants et significatifs.",
+    "about.intro":
+      "Je crée des identités visuelles audacieuses et des visuels digitaux modernes pour les marques, entrepreneurs et événements.",
+    "about.philosophy":
+      "Avec une formation en ingénierie informatique, je combine créativité visuelle, structure et précision pour concevoir des visuels impactants et significatifs.",
     "about.years": "Années",
     "about.location": "Cotonou",
     "about.country": "Bénin",
@@ -376,22 +406,28 @@ export const dictionaries = {
     "testimonials.cta.button": "Démarrer une discussion",
     "testimonials.1.name": "Julian Voss",
     "testimonials.1.role": "Fondateur, Zenith Agency",
-    "testimonials.1.message": "L'identité de marque est vraiment incroyable. Je fixe le logo depuis 20 minutes. Ça fait... premium. Exactement ce qu'il nous fallait.",
+    "testimonials.1.message":
+      "L'identité de marque est vraiment incroyable. Je fixe le logo depuis 20 minutes. Ça fait... premium. Exactement ce qu'il nous fallait.",
     "testimonials.2.name": "Sarah Chen",
     "testimonials.2.role": "Directrice Artistique",
-    "testimonials.2.message": "Fichiers finaux reçus ! Tout est parfait. Merci pour la rapidité sur les révisions.",
+    "testimonials.2.message":
+      "Fichiers finaux reçus ! Tout est parfait. Merci pour la rapidité sur les révisions.",
     "testimonials.3.name": "Marcus Thorne",
     "testimonials.3.role": "Responsable Marketing",
-    "testimonials.3.message": "Le client a adoré la présentation. Les choix typographiques sont audacieux mais fonctionnent parfaitement. On attaque les visuels réseaux sociaux la semaine prochaine ?",
+    "testimonials.3.message":
+      "Le client a adoré la présentation. Les choix typographiques sont audacieux mais fonctionnent parfaitement. On attaque les visuels réseaux sociaux la semaine prochaine ?",
     "testimonials.4.name": "Elena Rossi",
     "testimonials.4.role": "Commerce de Luxe",
-    "testimonials.4.message": "Je viens de voir les prototypes de packaging. La texture et le placement du doré, c'est magnifique. Perfection absolue.",
+    "testimonials.4.message":
+      "Je viens de voir les prototypes de packaging. La texture et le placement du doré, c'est magnifique. Perfection absolue.",
     "testimonials.5.name": "David K.",
     "testimonials.5.role": "Startup Tech",
-    "testimonials.5.message": "Cette séquence d'animation est tellement fluide. Tu as vraiment capturé l'ambiance 'futuriste' sans tomber dans le kitsch.",
+    "testimonials.5.message":
+      "Cette séquence d'animation est tellement fluide. Tu as vraiment capturé l'ambiance 'futuriste' sans tomber dans le kitsch.",
     "testimonials.6.name": "Sophia Wright",
     "testimonials.6.role": "Responsable E-commerce",
-    "testimonials.6.message": "Les taux de conversion ont déjà augmenté depuis le lancement du nouveau design. Ton œil pour l'UX est incomparable. Meilleur investissement de l'année.",
+    "testimonials.6.message":
+      "Les taux de conversion ont déjà augmenté depuis le lancement du nouveau design. Ton œil pour l'UX est incomparable. Meilleur investissement de l'année.",
 
     // Contact
     "contact.title": "Ensemble, créons",
@@ -403,31 +439,39 @@ export const dictionaries = {
 
     // Work Page
     "workpage.title": "Mes Travaux",
-    "workpage.subtitle": "Une sélection de systèmes d'identité, de branding événementiel et de design digital créés pour des entrepreneurs, la finance, le sport et la culture.",
+    "workpage.subtitle":
+      "Une sélection de systèmes d'identité, de branding événementiel et de design digital créés pour des entrepreneurs, la finance, le sport et la culture.",
     "workpage.view": "Voir le projet",
 
     // Impact Section
     "impact.title": "Impact",
     "impact.title.em": "Mesurable.",
-    "impact.description": "Le design est plus qu'une esthétique ; c'est un levier de croissance. Voici comment mon travail s'est traduit en résultats concrets pour mes clients.",
+    "impact.description":
+      "Le design est plus qu'une esthétique ; c'est un levier de croissance. Voici comment mon travail s'est traduit en résultats concrets pour mes clients.",
     "impact.1.category": "Portée Contenu",
     "impact.1.title": "Miniatures YouTube",
-    "impact.1.detail": "Augmentation moyenne du CTR de 14% sur 5 chaînes majeures (Tech & Lifestyle).",
+    "impact.1.detail":
+      "Augmentation moyenne du CTR de 14% sur 5 chaînes majeures (Tech & Lifestyle).",
     "impact.2.category": "Conseil",
     "impact.2.title": "Entrepreneurs Accompagnés",
-    "impact.2.detail": "Stratégie visuelle de bout en bout pour des startups, du stade de l'idée à la série A.",
+    "impact.2.detail":
+      "Stratégie visuelle de bout en bout pour des startups, du stade de l'idée à la série A.",
     "impact.3.category": "Stratégie de Marque",
     "impact.3.title": "Identités Visuelles",
-    "impact.3.detail": "Création de langages visuels uniques incluant logos, typographies et chartes graphiques.",
+    "impact.3.detail":
+      "Création de langages visuels uniques incluant logos, typographies et chartes graphiques.",
     "impact.4.category": "Événementiel",
     "impact.4.title": "Événements Majeurs",
-    "impact.4.detail": "Graphismes environnementaux et assets digitaux pour des conférences de 5000+ personnes.",
+    "impact.4.detail":
+      "Graphismes environnementaux et assets digitaux pour des conférences de 5000+ personnes.",
     "impact.5.category": "Succès Client",
     "impact.5.title": "Taux de Rétention",
-    "impact.5.detail": "Pourcentage de clients revenant pour un second projet au cours de la même année fiscale.",
+    "impact.5.detail":
+      "Pourcentage de clients revenant pour un second projet au cours de la même année fiscale.",
     "impact.6.category": "Flux de Travail",
     "impact.6.title": "Vitesse d'Exécution",
-    "impact.6.detail": "Délai moyen pour la livraison des premiers concepts visuels sur les packs standards.",
+    "impact.6.detail":
+      "Délai moyen pour la livraison des premiers concepts visuels sur les packs standards.",
   },
 } as const;
 

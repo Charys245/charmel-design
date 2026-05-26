@@ -79,7 +79,7 @@ export function V2Hero() {
 
       {/* Marquee bottom */}
       <div className="relative z-10 border-y border-white/20 bg-black py-5 backdrop-blur overflow-hidden">
-        <div className="flex marquee-container">
+        <div className="flex marquee-tags">
           {/* Duplicate content for seamless loop */}
           {[0, 1].map((groupIndex) => (
             <div

@@ -5,7 +5,7 @@ import { useT } from "../../i18n/LanguageContext";
 
 function Contact() {
   const { t } = useT();
-  const WHATSAPP_URL = "https://wa.me/22901660118";
+  const WHATSAPP_URL = "https://wa.me/22966016618";
 
   return (
     <Container className="bg-surface">

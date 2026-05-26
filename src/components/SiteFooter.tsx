@@ -97,9 +97,11 @@ export function SiteFooter() {
       </section>
 
       <div className="overflow-hidden border-t border-light/10">
-        <div className="marquee-container whitespace-nowrap py-8 flex gap-16 font-display text-[18vw] leading-none text-light/5 font-bold">
-          <span>{t("ft.marquee")}</span>
-          <span>{t("ft.marquee")}</span>
+        <div className="marquee-footer whitespace-nowrap py-8 gap-16 font-display text-[18vw] leading-none text-light/5 font-bold">
+          <span className="flex-shrink-0 px-8">{t("ft.marquee")}</span>
+          <span className="flex-shrink-0 px-8">{t("ft.marquee")}</span>
+          <span className="flex-shrink-0 px-8">{t("ft.marquee")}</span>
+          <span className="flex-shrink-0 px-8">{t("ft.marquee")}</span>
         </div>
       </div>
     </footer>
